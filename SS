@@ -1,0 +1,47 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextBox = Instance.new("TextBox")
+local Button = Instance.new("TextButton")
+local Message = Instance.new("TextLabel")
+
+ScreenGui.Parent = game:GetService("CoreGui")
+
+Frame.Parent = ScreenGui
+Frame.Size = UDim2.new(0, 200, 0, 100)
+Frame.Position = UDim2.new(1, -220, 1, -120)
+Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Frame.BorderSizePixel = 2
+
+TextBox.Parent = Frame
+TextBox.Size = UDim2.new(0, 180, 0, 30)
+TextBox.Position = UDim2.new(0, 10, 0, 10)
+TextBox.PlaceholderText = "Enter Key"
+TextBox.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.ClearTextOnFocus = false
+
+Button.Parent = Frame
+Button.Size = UDim2.new(0, 180, 0, 30)
+Button.Position = UDim2.new(0, 10, 0, 50)
+Button.Text = "Check Key"
+Button.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+Message.Parent = Frame
+Message.Size = UDim2.new(0, 180, 0, 20)
+Message.Position = UDim2.new(0, 10, 0, 85)
+Message.Text = ""
+Message.TextColor3 = Color3.fromRGB(255, 0, 0)
+Message.BackgroundTransparency = 1
+
+Button.MouseButton1Click:Connect(function()
+    if TextBox.Text == "x8hb1@ac5" then
+        Message.TextColor3 = Color3.fromRGB(0, 255, 0)
+        Message.Text = "Success! Loading..."
+        wait(1)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Obunga-666/Lalol-hub-without-hint/refs/heads/main/Lalol%20hub%20without%20hint"))()
+    else
+        Message.TextColor3 = Color3.fromRGB(255, 0, 0)
+        Message.Text = "Error, wrong key"
+    end
+end)
